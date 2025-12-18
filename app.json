@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Purita Suerte",
+    "slug": "purita-suerte",
+    "version": "0.1.0",
+    "scheme": "puritasuerte",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTabletMode": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "We need access to your camera roll to upload photos.",
+        "NSPhotoLibraryUsageDescription": "We need access to your photo library to upload images.",
+        "NSPhotoLibraryAddOnlyUsageDescription": "We need permission to save photos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#7e22ce"
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "purita-suerte-mvp0"
+      }
+    }
+  }
+}

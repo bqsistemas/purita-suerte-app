@@ -1,0 +1,122 @@
+Purita Suerte MVP0 - Project Structure
+======================================
+
+PROJECT ROOT
+├── 📄 package.json                 # Dependencies & scripts
+├── 📄 tsconfig.json                # TypeScript configuration (strict mode)
+├── 📄 jest.config.js               # Jest test runner config
+├── 📄 jest.setup.js                # Jest setup & mocks
+├── 📄 babel.config.js              # Babel transpiler config
+├── 📄 app.json                     # Expo app configuration
+├── 📄 .eslintrc.json               # ESLint rules & TypeScript
+├── 📄 .prettierrc                  # Code formatting
+├── 📄 .gitignore                   # Git exclusions
+├── 📄 .env.example                 # Environment template
+├── 📄 README.md                    # Project guide & setup
+├── 📄 SPEC.md                      # MVP0 specification
+├── 📄 MVP0_BUILD_SUMMARY.md        # Build completion summary
+│
+└── �� src/                         # Source code root
+    │
+    ├── 📄 index.tsx                # Expo entry point
+    │
+    ├── 📁 app/                     # Application shell
+    │   ├── 📄 index.tsx            # Root App component
+    │   ├── 📄 providers.tsx        # QueryClientProvider setup
+    │   └── 📁 navigation/          # Navigation configuration
+    │       ├── 📄 index.ts         # RootNavigator (Auth/App stacks)
+    │       └── 📄 types.ts         # Navigation type definitions
+    │
+    ├── 📁 features/                # Feature modules (autonomous)
+    │   │
+    │   ├── 📁 auth/                # Authentication feature
+    │   │   ├── 📄 index.ts         # Public API exports
+    │   │   │
+    │   │   ├── 📁 ui/              # UI components
+    │   │   │   ├── 📄 LoginScreen.tsx
+    │   │   │   └── 📁 __tests__/
+    │   │   │       └── 📄 LoginScreen.test.tsx (10 tests)
+    │   │   │
+    │   │   ├── 📁 model/           # State management
+    │   │   │   ├── 📄 authStore.ts (Zustand store)
+    │   │   │   ├── 📄 types.ts
+    │   │   │   └── 📁 __tests__/
+    │   │   │       └── 📄 authStore.test.ts (8 tests)
+    │   │   │
+    │   │   ├── 📁 api/             # API & contracts
+    │   │   │   ├── 📄 contracts.ts (Zod schemas, mockLogin)
+    │   │   │   └── 📁 __tests__/
+    │   │   │       └── 📄 contracts.test.ts (9 tests)
+    │   │   │
+    │   │   └── 📁 hooks/           # Custom hooks
+    │   │       ├── 📄 useAuth.ts
+    │   │       └── 📁 __tests__/
+    │   │           └── 📄 useAuth.test.ts (10 tests)
+    │   │
+    │   └── 📁 home/                # Home feature (post-login)
+    │       ├── 📄 index.ts         # Public API exports
+    │       └── 📁 ui/              # UI components
+    │           ├── 📄 HomeScreen.tsx
+    │           └── 📁 __tests__/
+    │               └── 📄 HomeScreen.test.tsx (10 tests)
+    │
+    └── 📁 shared/                  # Shared, reusable code
+        │
+        ├── 📁 api/                 # HTTP client
+        │   ├── 📄 client.ts
+        │   ├── 📄 index.ts
+        │   └── 📁 __tests__/
+        │       └── 📄 client.test.ts (8+ tests)
+        │
+        ├── 📁 types/               # Global types
+        │   ├── 📄 result.ts (Result pattern)
+        │   ├── 📄 index.ts
+        │   └── 📁 __tests__/
+        │       └── �� result.test.ts (5 tests)
+        │
+        ├── �� validation/          # Shared validators (empty, ready for schemas)
+        ├── 📁 utils/               # Pure utilities (empty, ready for helpers)
+        └── 📁 ui/                  # Design system components (empty, future)
+
+STATISTICS
+==========
+Source Files:        24 TypeScript files (`.ts` / `.tsx`)
+Test Files:          9 test files (57+ tests)
+Config Files:        10 configuration files
+Documentation:       3 markdown files
+
+FEATURE CHECKLIST
+=================
+✅ Login Screen (with validation, loading, errors)
+✅ Home Screen (with "Hola mundo" message)
+✅ Session Persistence (token storage & restore)
+✅ Mock Backend (deterministic, replaceable)
+✅ Error Handling (Result pattern)
+✅ Type Safety (strict TypeScript)
+✅ Tests (≥80% coverage target)
+✅ Accessibility (labels, touch targets)
+✅ Security (Secure Store, no PII logging)
+
+QUICK START
+===========
+npm install              # Install dependencies
+npm start                # Start development server
+npm test                 # Run all tests
+npm run typecheck        # TypeScript check
+npm run lint             # ESLint check
+
+Demo Credentials:
+  user@example.com / password123
+  admin@example.com / admin123
+
+ARCHITECTURE SUMMARY
+====================
+✅ Feature-Sliced Design
+✅ Autonomous Feature Modules
+✅ Clear Dependency Direction (shared ← features ← app)
+✅ No Circular Imports
+✅ Zustand for Client State
+✅ TanStack Query Ready (for Server State)
+✅ React Navigation (Auth/App stacks)
+✅ Comprehensive Tests
+✅ Constitution Compliant
